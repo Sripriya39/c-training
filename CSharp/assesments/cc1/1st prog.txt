@@ -1,0 +1,8 @@
+﻿Build started at 10:23 AM...
+1>------ Build started: Project: ConsoleApp8, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>C:\Users\sripriyar\source\repos\ConsoleApp8\ConsoleApp8\Program.cs(5,11,5,18): warning CS8981: The type name 'program' only contains lower-cased ascii characters. Such names may become reserved for the language.
+1>ConsoleApp8 -> C:\Users\sripriyar\source\repos\ConsoleApp8\ConsoleApp8\bin\Debug\net8.0\ConsoleApp8.dll
+1>Done building project "ConsoleApp8.csproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 10:23 AM and took 00.494 seconds ==========

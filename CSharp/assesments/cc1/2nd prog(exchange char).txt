@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace ExchangeChar
+{
+    class secondprog
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Give a string:");
+            string inpString = Console.ReadLine();
+
+            if (inpString.Length < 2)
+            {
+                Console.WriteLine("give at least two characters.");
+                return;
+            }
+
+            char[] charArray = inpString.ToCharArray();
+            char temp = charArray[0];
+            charArray[0] = charArray[charArray.Length - 1];
+            charArray[charArray.Length - 1] = temp;
+
+            string output = new string(charArray);
+            Console.WriteLine(output);
+        }
+    }
+}
