@@ -1,0 +1,7 @@
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\obj\Debug\finalass2.csproj.AssemblyReference.cache
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\obj\Debug\finalass2.csproj.CoreCompileInputs.cache
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\bin\Debug\finalass2.exe.config
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\bin\Debug\finalass2.exe
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\bin\Debug\finalass2.pdb
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\obj\Debug\finalass2.exe
+C:\c# training\assignments\CSharp\assignment\ass2\finalass2\finalass2\obj\Debug\finalass2.pdb
