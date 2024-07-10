@@ -1,0 +1,2 @@
+A program in C# Sharp to append some text to an existing file with Use of appropriate mode of operation and help of stream writer classThis is the text to append.
+hello, Welcome to C sharp Training in Infinite 
