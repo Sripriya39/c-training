@@ -1,0 +1,43 @@
+select * from EMP
+select * from DEPT
+
+select mgr_id, ename from EMP
+where job='manager' 
+
+select ename,sal 
+from emp 
+where sal > 1000;
+
+select ename,sal from emp where ename <> 'james'
+
+select * from emp where ename like 's%'
+
+select* from emp where ename like '%a%'
+
+select * from emp where ename like '__l%'
+
+select sal/30 as daily_sal from emp where ename='jones'
+
+select sum(sal) as total_sal from emp
+
+select avg(sal)*12 as annual_salary from emp
+
+select ename ,job,sal,deptno from emp where deptno=30 and job<>'salesman'
+
+select distinct deptno from emp
+
+select ename as employee,sal as monthly_salary from emp where sal >1500 and deptno in (10,30)
+
+select ename,job,sal from emp where (job = 'manager' or  job= 'analyst') and sal not in (1000,3000,5000)
+
+select ename,sal,comm from emp where comm > sal * 0.1
+
+select ename from emp where ename like '%ll%' and (deptno = 30 or mgr_id = 7782)
+
+SELECT d.deptno, e.ename
+FROM dept d
+JOIN emp e ON d.deptno = e.deptno
+ORDER BY d.deptno ASC, e.ename DESC;
+
+select datediff(year,hiredate,getdate()) as experience from emp where ename='miller'
+
