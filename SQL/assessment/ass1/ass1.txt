@@ -1,0 +1,86 @@
+--1. display birthday(day of week)
+
+select datename (weekday,'2001-10-03') as My_Birthday;
+
+2.Write a query to display your age in days
+
+declare @birthday Date = '2001-10-03'
+select Datediff(day,@birthday,getdate()) as age_in_days
+
+3.Write a query to display all employees information those who joined before 5 years in the current month
+ 
+ select * from EMP
+
+
+update emp set hiredate = '1980-07-17' where empno=7369
+update emp set hiredate = '1981-07-28' where empno=7654
+
+
+select * from emp where month(hiredate) = month(getdate()) and year(hiredate) <= year(getdate()) - 5
+
+4.Create table Employee with empno, ename, sal, doj columns and perform the following operations in a single transaction
+
+create table empp( empno int primary key, ename varchar(10), sal decimal(7,2),doj date)
+
+select * from empp
+
+--a. First insert 3 rows 
+
+begin transaction
+
+insert into empp values
+	(101,'sripriya',5000,'2024-06-30'),
+	(102,'karthi',6000,'2024-07-15'),
+	(103,'vidhya',10000,'2023-10-09')
+
+
+--b. Update the second row sal with 15% increment  
+
+update empp set sal = sal*0.15 where empno=102
+
+--c. Delete first row.
+
+delete from empp where empno=101
+
+commit transaction
+
+--After completing above all actions how to recall the deleted row without losing increment of second row.
+
+CREATE TABLE Emmpp(
+  empno int,
+  ename varchar(50),
+  sal decimal(10, 2),
+  doj date,
+  deleted BIT DEFAULT 0
+);
+insert into emmpp values(104,'sri',2300,'2000-12-12')
+
+UPDATE Emmpp
+SET deleted = 0
+WHERE empno = 102;
+
+
+
+
+
+
+
+create or alter function CalculateBonus (@deptno int, @sal decimal)
+returns decimal
+as
+begin
+    declare @bonus decimal
+--a.For Deptno 10 employees 15% of sal as bonus.
+    if @deptno = 10
+        set @bonus = @sal * 0.15
+ -- b.For Deptno 20 employees  20% of sal as bonus
+  else if @deptno = 20
+        set @bonus = @sal * 0.20
+  --c. For Others employees 5%of sal as bonus 
+  else
+        set @bonus = @sal * 0.05
+
+    return @bonus
+end
+
+SELECT dbo.CalculateBonus(20, 500.000) AS BonusAmount
