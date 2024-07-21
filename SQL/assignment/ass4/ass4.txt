@@ -1,0 +1,63 @@
+declare @number int = 3; 
+declare @factorial int = 1;
+
+while @number > 1
+begin
+    set @factorial = @factorial * @number;
+    set @number = @number - 1;
+end
+
+print 'The factorial of the given number is: ' + convert(varchar, @factorial);
+
+
+
+create or alter procedure GenerateMultiplicationTable
+    @Number int,
+    @Limit int
+as
+begin
+    declare @i int
+    set @i = 1
+    print 'Multiplication table for ' + CONVERT(VARCHAR, @Number) + ':'
+    while @i <= @Limit
+    begin
+        print convert(VARCHAR, @Number) + ' * ' + CONVERT(VARCHAR, @i) + ' = ' + CONVERT(VARCHAR, @Number * @i)
+        set @i = @i + 1
+    end
+end
+
+exec GenerateMultiplicationTable 5, 10
+
+
+
+create table Holidays (
+    holiday_date DATE,
+    holiday_name VARCHAR(50)
+);
+INSERT INTO Holidays (holiday_date, holiday_name)
+VALUES
+    ('2023-08-15', 'Independence Day'),
+    ('2023-10-24', 'Diwali'),
+    ('2023-12-25', 'Christmas'),
+    ('2024-01-01', 'New Year');
+
+select * from holidays
+
+create procedure sp_get_date
+    @date DATE
+as
+begin
+ 
+    DECLARE @holiday_name VARCHAR(50);
+
+    SELECT @holiday_name = holiday_name
+    FROM Holidays
+    WHERE holiday_date = @date;
+
+    IF @holiday_name IS NOT NULL
+    BEGIN
+        raiseerror ('Due to %s, you cannot manipulate data', 16, 1, @holiday_name);
+    END
+END
+
+EXEC sp_get_date '2024-10-24';
