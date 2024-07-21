@@ -1,0 +1,49 @@
+select * from employees
+
+CREATE PROCEDURE sp_generate_payslip
+    @empno INT
+AS
+BEGIN
+    declare @salary DECIMAL(10, 2);
+    declare @hra DECIMAL(10, 2);
+    declare @da DECIMAL(10, 2);
+    declare @pf DECIMAL(10, 2);
+    declare @it DECIMAL(10, 2);
+    declare @deductions DECIMAL(10, 2);
+    declare @gross_salary DECIMAL(10, 2);
+    declare @net_salary DECIMAL(10, 2);
+    declare @ename VARCHAR(50);
+
+    select @salary = salary, @ename = ename from employees where empno = @empno;
+
+    -- Calculate HRA, DA, PF, and IT
+    SET @hra = @salary * 0.10;
+    SET @da = @salary * 0.20;
+    SET @pf = @salary * 0.08;
+    SET @it = @salary * 0.05;
+
+    -- Calculate deductions
+    SET @deductions = @pf + @it;
+
+    -- Calculate gross salary
+    SET @gross_salary = @salary + @hra + @da;
+
+    -- Calculate net salary
+    SET @net_salary = @gross_salary - @deductions;
+
+    -- Print the payslip
+    PRINT 'Payslip for ' + @ename + ' (Empno: ' + CONVERT(VARCHAR, @empno) + ')';
+    PRINT '-----------------------------------------';
+    PRINT 'Basic Salary: ' + CONVERT(VARCHAR, @salary);
+    PRINT 'HRA (10%): ' + CONVERT(VARCHAR, @hra);
+    PRINT 'DA (20%): ' + CONVERT(VARCHAR, @da);
+    PRINT 'PF (8%): ' + CONVERT(VARCHAR, @pf);
+    PRINT 'IT (5%): ' + CONVERT(VARCHAR, @it);
+    PRINT 'Deductions: ' + CONVERT(VARCHAR, @deductions);
+    PRINT 'Gross Salary: ' + CONVERT(VARCHAR, @gross_salary);
+    PRINT 'Net Salary: ' + CONVERT(VARCHAR, @net_salary);
+    PRINT '-----------------------------------------';
+END
+
+
+EXEC sp_generate_payslip 109 ;
