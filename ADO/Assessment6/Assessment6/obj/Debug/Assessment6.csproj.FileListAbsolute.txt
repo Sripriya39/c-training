@@ -1,0 +1,7 @@
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\bin\Debug\Assessment6.exe.config
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\bin\Debug\Assessment6.exe
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\bin\Debug\Assessment6.pdb
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\obj\Debug\Assessment6.csproj.AssemblyReference.cache
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\obj\Debug\Assessment6.csproj.CoreCompileInputs.cache
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\obj\Debug\Assessment6.exe
+C:\dotnet training\assignments\ADO\Assessment6\Assessment6\obj\Debug\Assessment6.pdb

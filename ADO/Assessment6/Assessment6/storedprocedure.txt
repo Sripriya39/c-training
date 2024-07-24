@@ -1,0 +1,29 @@
+create database Employeemanagement
+
+use employeemanagement;
+
+create table Employee_Details
+(Empno int primary key ,
+EmpName varchar(50) not null ,
+EmpSal Numeric(10,2) check (Empsal >= 25000) ,
+Emptype char(1) check (Emptype in ('F','P')))
+
+create procedure AddEmployee 
+@EmpName Varchar(50),
+@Empsal Numeric(10,2),
+@Emptype char(1)
+as
+begin
+declare @Empno int;
+set @Empno = (select isnull(max(Empno),0)+1 from Employee_Details);
+
+insert into Employee_Details(Empno,EmpName,EmpSal,Emptype) values (@empno,@EmpName,@Empsal,@Emptype);
+
+end;
+
+Exec AddEmployee 'sri', 50000.00, 'F';
+Exec AddEmployee 'karthi', 40000.00, 'F';
+Exec AddEmployee 'vidhu', 30000.00, 'P';
+
+
+select * from Employee_Details
