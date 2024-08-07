@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Multiplication and Division Calculator</title>
+</head>
+<body>
+    <form>
+        <label for="num1">1st number:</label>
+        <input type="number" id="num1" required><br><br>
+        <label for="num2">2nd number:</label>
+        <input type="number" id="num2" required><br><br>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const multiplyButton = document.getElementById('multiply');
+        const divideButton = document.getElementById('divide');
+        const resultElement = document.getElementById('result');
+
+       
+        multiplyButton.addEventListener('click', multiplyNumbers);
+        divideButton.addEventListener('click', divideNumbers);
+
+     
+        function multiplyNumbers() {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const result = num1 * num2;
+            resultElement.textContent = `The result is: ${result}`;
+        }
+
+      
+        function divideNumbers() {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            if (num2 !== 0) {
+                const result = num1 / num2;
+                resultElement.textContent = `The result is: ${result}`;
+            } else {
+                resultElement.textContent = 'Error: Division by zero is not allowed';
+            }
+        }
+    </script>
+</body>
+</html>
