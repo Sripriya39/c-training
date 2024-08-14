@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MoviesApp.Controllers.MoviesController>
+
+<h2>Movies Released in @ViewBag.Year</h2>
+
+<table>
+    <tr>
+        <th>Movie Name</th>
+        <th>Date of Release</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MovieName</td>
+            <td>@item.DateOfRelease.ToShortDateString()</td>
+        </tr>
+    }
+</table>

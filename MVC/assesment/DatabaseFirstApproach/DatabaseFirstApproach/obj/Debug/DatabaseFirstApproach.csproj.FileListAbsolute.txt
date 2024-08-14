@@ -1,0 +1,2 @@
+C:\c-training\MVC\DatabaseFirstApproach\DatabaseFirstApproach\obj\Debug\DatabaseFirstApproach.csproj.AssemblyReference.cache
+C:\c-training\MVC\DatabaseFirstApproach\DatabaseFirstApproach\obj\Debug\DatabaseFirstApproach.csproj.CoreCompileInputs.cache
